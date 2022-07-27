@@ -1,0 +1,92 @@
+﻿@model IEnumerable<studentmangment2022.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="sagar">
+
+    
+<form method="get" asp-action="Index">
+         <p>
+        <input type="search" placeholder="PhonNumber....?" 
+        value="@ViewData["Studentsearch"]" name="Studentsearch" style="width:150px;"  style="text-align:right" Required  />
+        
+        <input type="submit" value="Search" class="btn btn-secondary btn-rounded"/>
+        <a asp-action="Index"  class="btn btn-secondary btn-rounded">LIst all</a>
+    </p>
+    </form>
+
+</div>
+
+ <a class="btn btn-danger" asp-area="" asp-controller="Home" asp-action="Index">Logout</a>
+
+<br />
+<p>
+    <a asp-action="Create"class="btn btn-info">New Registration</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseJoin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseFee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BatchId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MobileNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseJoin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BatchId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobileNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Regno"class="btn btn-info">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Regno"class="btn btn-info">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Regno"class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

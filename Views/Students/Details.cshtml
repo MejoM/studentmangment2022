@@ -1,0 +1,66 @@
+﻿@model studentmangment2022.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Student Details</h1>
+
+<div>
+    <h4> </h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentFullName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StudentFullName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CourseJoin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CourseJoin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CourseFee)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CourseFee)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BatchId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BatchId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Doj)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Doj)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StudentAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StudentAddress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MobileNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MobileNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmailId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmailId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Regno" class="btn btn-primary w-100">Edit</a> |
+  <a asp-action="Index" class="btn btn-primary w-100">Back to List</a>
+</div>
